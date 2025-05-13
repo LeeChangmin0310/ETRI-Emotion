@@ -75,10 +75,11 @@ This project is developed in Python with Jupyter notebooks.
 Clone the repository and install dependencies via `conda` and `pip`.
 
 ```bash
-git clone https://github.com/your-org/etri-emotion.git
-cd etri-emotion
+git clone git@github.com:LeeChangmin0310/ETRI-Emotion.git
+cd ETRI-Emotion
 
 # Create and activate conda environment
+chmod +x setup_etri_emotion.sh
 bash setup_etri_emotion.sh
 
 # Or manually
