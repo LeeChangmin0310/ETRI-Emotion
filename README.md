@@ -38,7 +38,10 @@ All datasets used in this repository are collected under the ETRI emotion recogn
 - `Labels`: Emotion class for each trial
 - `EI Scores`: Subject-wise emotional intelligence scores
 
-> ❗ rPPG is **not** used in this project.
+### 📁 Data Directory
+
+All data used in this project (e.g., ECG signals, facial features, labels) should be placed in the `data/` folder.  
+**Note:** This folder is excluded from version control via `.gitignore`.
 
 ---
 
@@ -69,9 +72,19 @@ This project is developed in Python with Jupyter notebooks.
 
 ## 📦 Installation
 
+Clone the repository and install dependencies via `conda` and `pip`.
+
 ```bash
 git clone https://github.com/your-org/etri-emotion.git
 cd etri-emotion
-conda env create -f environment.yml
-conda activate etri-emotion
+
+# Create and activate conda environment
+bash setup_etri_emotion.sh
+
+# Or manually
+# conda create -n etri-emotion python=3.10
+# conda activate etri-emotion
+# pip install -r requirements.txt
+
+# Launch Jupyter Lab
 jupyter lab
