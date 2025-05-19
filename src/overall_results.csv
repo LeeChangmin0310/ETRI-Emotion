@@ -1,0 +1,13 @@
+config,scaler,model,AUC_CV,Acc_CV,Acc_holdout
+1,none,ExtraTreesClassifier,0.5015,0.1944,0.19444444444444445
+1,standard,ExtraTreesClassifier,0.4907,0.2222,0.2222222222222222
+1,minmax,ExtraTreesClassifier,0.4856,0.2222,0.2222222222222222
+2,none,ExtraTreesClassifier,0.4666,0.25,0.25
+2,standard,ExtraTreesClassifier,0.4738,0.25,0.25
+2,minmax,ExtraTreesClassifier,0.4959,0.2778,0.2777777777777778
+3,none,ExtraTreesClassifier,0.4738,0.2778,0.2777777777777778
+3,standard,ExtraTreesClassifier,0.4712,0.2778,0.2777777777777778
+3,minmax,ExtraTreesClassifier,0.4938,0.2778,0.2777777777777778
+4,none,KNeighborsClassifier,0.4594,0.3056,0.3055555555555556
+4,standard,KNeighborsClassifier,0.5442,0.2222,0.2222222222222222
+4,minmax,KNeighborsClassifier,0.5118,0.2222,0.2222222222222222

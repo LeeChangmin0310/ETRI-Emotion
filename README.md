@@ -87,5 +87,4 @@ bash setup_etri_emotion.sh
 # conda activate etri-emotion
 # pip install -r requirements.txt
 
-# Launch Jupyter Lab
-jupyter lab
+conda activate etri-emotion
