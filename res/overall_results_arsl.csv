@@ -1,0 +1,13 @@
+config,scaler,model,AUC_CV,Acc_CV,Acc_holdout
+1,none,QuadraticDiscriminantAnalysis,0.5556,0.5556,0.5555555555555556
+1,standard,RandomForestClassifier,0.2469,0.2778,0.2777777777777778
+1,minmax,RandomForestClassifier,0.2222,0.3333,0.3333333333333333
+2,none,QuadraticDiscriminantAnalysis,0.5,0.5,0.5
+2,standard,RandomForestClassifier,0.3951,0.3333,0.3333333333333333
+2,minmax,RandomForestClassifier,0.4383,0.3333,0.3333333333333333
+3,none,RandomForestClassifier,0.4012,0.3333,0.3333333333333333
+3,standard,RandomForestClassifier,0.4012,0.3333,0.3333333333333333
+3,minmax,RandomForestClassifier,0.4444,0.4444,0.4444444444444444
+4,none,RandomForestClassifier,0.4383,0.3889,0.3888888888888889
+4,standard,RandomForestClassifier,0.4506,0.3889,0.3888888888888889
+4,minmax,RandomForestClassifier,0.4444,0.3889,0.3888888888888889

@@ -1,0 +1,10 @@
+Model,Accuracy,AUC,Recall,Prec.,F1,Kappa,MCC,TT (Sec),config,scaler
+Naive Bayes,0.5617,0.5942,0.4444,0.5911,0.5021,0.1235,0.1308,0.0067,3,none
+K Neighbors Classifier,0.5802,0.5921,0.5679,0.6003,0.5634,0.1605,0.178,0.0133,3,none
+Extra Trees Classifier,0.5617,0.5775,0.5926,0.5592,0.5751,0.1235,0.1237,0.04,3,none
+Logistic Regression,0.5741,0.5652,0.5802,0.5758,0.5662,0.1481,0.1532,0.02,3,none
+Random Forest Classifier,0.5309,0.5642,0.5309,0.5429,0.531,0.0617,0.0611,0.0433,3,none
+CatBoost Classifier,0.463,0.4925,0.4444,0.4566,0.4473,-0.0741,-0.0761,1.0433,3,none
+SVM - Linear Kernel,0.5062,0.4833,0.4815,0.51,0.4937,0.0123,0.0125,0.0067,3,none
+Extreme Gradient Boosting,0.4568,0.4792,0.4444,0.4456,0.4435,-0.0864,-0.0882,0.0233,3,none
+Quadratic Discriminant Analysis,0.463,0.439,0.7654,0.4738,0.5723,-0.0741,-0.119,0.0067,3,none
