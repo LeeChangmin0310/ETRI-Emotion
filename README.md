@@ -1,90 +1,62 @@
-# Emotion Recognition using ECG and Micro-Expressions (ETRI Project)
+# Emotion Recognition using ECG (ETRI Project)
 
-A multi-modal machine learning framework for emotion recognition using ECG-derived cardiac features and micro facial expressions. This repository is developed as part of the ETRI Emotion Intelligence research project.
-
----
-
-## 📌 Overview
-
-This project aims to classify emotional states using:
-
-- **Cardiac information** derived from raw ECG signals
-- **Micro facial expressions** extracted from videos
-- **Multi-modal fusion** of both modalities
-
-In addition, we evaluate how **Emotional Intelligence (EI)** differences influence model performance.
+An ETRI project to build and validate machine learning models for emotion recognition (Arousal/Valence) using ECG-derived cardiac features. This project also analyzes how a subject's Emotional Intelligence (EI) impacts model performance.
 
 ---
 
-## 🎯 Emotion Labels
+## 🔬 Project Structure & Experiments
 
-We use a 4-class label system based on arousal and valence:
+This repository is organized into a series of experiments, each building upon the last.
 
-| Code  | Description                  |
-|-------|------------------------------|
-| HAHV  | High Arousal, High Valence   |
-| HALV  | High Arousal, Low Valence    |
-| LAHV  | Low Arousal, High Valence    |
-| LALV  | Low Arousal, Low Valence     |
+1.  **`cardio_exp0_preprocessing`**
+    * **Purpose**: Initial data exploration (EDA) and feature preprocessing.
+    * **Contains**: Jupyter notebooks for cleaning data and preparing features for modeling.
 
----
+2.  **`cardio_exp1_given_data` (Baseline)**
+    * **Purpose**: Establish a baseline using the initially provided 5-fold data splits.
+    * **Finding**: This approach resulted in abnormally high accuracy (~95%), strongly suggesting **data leakage** in the original splits. This motivated the need for more robust validation.
 
-## 📁 Data
+3.  **`cardio_exp2_entire_data_TVT` (Standard Hold-Out Validation)**
+    * **Purpose**: To robustly evaluate model performance on unseen data, preventing leakage.
+    * **Method**: Combines all data, splits it into a training set (80%) and a hold-out test set (20%), and performs 5-fold CV only on the training set before final evaluation on the test set.
 
-All datasets used in this repository are collected under the ETRI emotion recognition study. The data includes:
-
-- `ECG`: Preprocessed signal features (e.g., HRV, time-domain)
-- `Facial`: Micro-expression features extracted via video analysis
-- `Labels`: Emotion class for each trial
-- `EI Scores`: Subject-wise emotional intelligence scores
-
-### 📁 Data Directory
-
-All data used in this project (e.g., ECG signals, facial features, labels) should be placed in the `data/` folder.  
-**Note:** This folder is excluded from version control via `.gitignore`.
+4.  **`cardio_exp3_entire_data_TV` (K-Fold CV on All Training Data)**
+    * **Purpose**: To assess the model's potential performance when using all available training data.
+    * **Method**: Combines all `train` and `valid` sets and performs a 5-fold CV on the entire collection.
 
 ---
 
-## 🧠 EI-based Performance Analysis
+## 📁 Data & Results
 
-Subjects are grouped into **High-EI** and **Low-EI** groups. We analyze:
-
-- Accuracy differences by EI level
-- Signal stability and feature distribution
-- Physiological vs. behavioral expression gaps
+* **Data (`/data`)**: All scripts expect raw and preprocessed data to be in a `data` subfolder within each experiment's directory (e.g., `cardio_exp1_given_data/data/`).
+* **Results (`/res`)**: Each experiment saves its performance summary (Accuracy, AUC, F1, etc.) as `.csv` files in its respective `res` subfolder.
 
 ---
 
-## 🔬 Experiments (via Jupyter Notebooks)
+## 🚀 Getting Started
 
-This project is developed in Python with Jupyter notebooks.
+1.  **Clone the repository**:
+    ```bash
+    git clone git@github.com:LeeChangmin0310/ETRI-Emotion.git
+    cd ETRI-Emotion
+    ```
 
-| Notebook                                 | Description                                |
-|------------------------------------------|--------------------------------------------|
-| `1_preprocessing.ipynb`                  | ECG preprocessing and feature extraction   |
-| `2_facial_features.ipynb`                | Extract micro-expression features          |
-| `3_ecg_classification.ipynb`             | ECG-only classification                    |
-| `4_facial_classification.ipynb`          | Facial-only classification                 |
-| `5_fusion_classification.ipynb`          | ECG + Facial combined model                |
-| `6_ei_analysis.ipynb`                    | EI-based performance comparison            |
+2.  **Set up the environment**:
+    ```bash
+    chmod +x setup_etri_emotion.sh
+    ./setup_etri_emotion.sh
+    conda activate etri-emotion
 
----
-
-## 📦 Installation
-
-Clone the repository and install dependencies via `conda` and `pip`.
-
-```bash
-git clone git@github.com:LeeChangmin0310/ETRI-Emotion.git
-cd ETRI-Emotion
-
-# Create and activate conda environment
-chmod +x setup_etri_emotion.sh
-bash setup_etri_emotion.sh
-
-# Or manually
-# conda create -n etri-emotion python=3.10
-# conda activate etri-emotion
-# pip install -r requirements.txt
-
-conda activate etri-emotion
+    # Or manually
+    conda create -n etri-emotion python=3.10
+    conda activate etri-emotion
+    pip install -r requirements.txt
+    conda activate etri-emotion
+    ```
+    
+3.  **Run an experiment**:
+    Navigate to the desired experiment directory and run its main script.
+    ```bash
+    cd cardio_exp2_entire_data_TVT
+    python main.py # Or the corresponding script/JupyterNotebook
+    ```
