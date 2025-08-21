@@ -1,0 +1,6 @@
+Model,Accuracy,AUC,Recall,Prec.,F1,Kappa,MCC
+Extra Trees Classifier,0.4167,0.4454,0.4167,0.6136,0.3159,0.0345,0.0778
+Ada Boost Classifier,0.375,0.4537,0.375,0.4408,0.3304,-0.0909,-0.1325
+Naive Bayes,0.3958,0.587,0.3958,0.7686,0.248,0.0252,0.113
+Random Forest Classifier,0.4167,0.4611,0.4167,0.5595,0.3389,0.0175,0.0325
+Dummy Classifier,0.375,0.5,0.375,0.1406,0.2045,0.0,0.0

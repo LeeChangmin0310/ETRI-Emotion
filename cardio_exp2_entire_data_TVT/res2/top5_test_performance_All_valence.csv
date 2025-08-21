@@ -1,0 +1,6 @@
+Model,Accuracy,AUC,Recall,Prec.,F1,Kappa,MCC
+Extra Trees Classifier,0.5417,0.5192,0.5417,0.537,0.5384,0.0588,0.059
+Light Gradient Boosting Machine,0.5417,0.5604,0.5417,0.5417,0.5417,0.0688,0.0688
+Extreme Gradient Boosting,0.5833,0.545,0.5833,0.5812,0.582,0.1489,0.1491
+CatBoost Classifier,0.6042,0.5776,0.6042,0.609,0.6056,0.2042,0.2049
+Random Forest Classifier,0.6146,0.5743,0.6146,0.6119,0.6127,0.2107,0.2111
